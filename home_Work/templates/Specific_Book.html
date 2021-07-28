@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Specific</title>
+     <link rel="stylesheet" href="{% static 'CSS\indexPageCss.css' %}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+        <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Book ID</th>
+      <th scope="col">Book Name</th>
+      <th scope="col">Book Auther</th>
+      <th scope="col">Book Price</th>
+        <th scope="col">Book Discount</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for book in bookList %}
+    <tr>
+
+        {% if book.bookAuther == 'Mr. Chetan Bhagat'%}
+      <td>{{book.id}}</td>
+      <td>{{book.bookName}}</td>
+      <td>{{book.bookAuther}}</td>
+      <td>{{book.bookPrice}}</td>
+        <td>{{book.bookDiscount}}</td>
+        {% endif %}
+
+    </tr>
+
+        {% endfor %}
+  </tbody>
+        </table>
+
+</body>
+</html>
