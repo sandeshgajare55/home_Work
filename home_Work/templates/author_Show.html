@@ -1,1 +1,31 @@
-<h1>show by Author</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+table,th,td{
+border:1px solid black;
+}
+</style>
+ <h1>show only particular author</h1>
+</head>
+<table>
+<tr>
+<th>Book ID</th>
+<th>Book Name</th>
+<th>Book Cost</th>
+<th>Book Author</th>
+</tr>
+    {% for book in val %}
+        <tr>
+            {% if book.b_Author == 'Mr.Chetan' %}
+        <td>{{ book.id }}</td>
+        <td>{{ book.b_Name }}</td>
+        <td>{{ book.b_Cost }}</td>
+        <td>{{ book.b_Author }}</td><br>
+            {% endif %}
+        </tr>
+    {% endfor %}
+
+</table>
+</body>
+</html>

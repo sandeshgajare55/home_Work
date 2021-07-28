@@ -10,5 +10,5 @@ def show_All(request):
 def author_Show(request):
     t2 = book_Demo.objects.all()
     bookdict2 = {'val': t2}
-    return render(request,'Specific_Book.html',bookdict2)
+    return render(request,'author_Show.html',bookdict2)
 
