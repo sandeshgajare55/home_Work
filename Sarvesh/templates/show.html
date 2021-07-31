@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css" >
+table{
+border:1px solid black;
+}
+</style>
+    <link rel="stylesheet" type="text/css" href="d1.css"/>
+</head>
+<body>
+<table>
+<tr>
+        <th>Person ID</th>
+        <th>Person Name</th>
+        <th>Person Salary</th>
+    </tr>
+
+    {% for i in val %}
+    <tr>
+        <td>{{ i.id }}</td>
+        <td>{{ i.p_name }}</td>
+        <td>{{ i.p_sal }}</td>
+
+    </tr>
+    {% endfor %}
+</table>
+<h1>Hello</h1>
+</body>
+</html>
