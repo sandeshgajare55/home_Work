@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GET SESSION</title>
+</head>
+<body>
+{%csrf_token%}
+<h1>GET SESSION </h1>
+{{name}}
+{{l_name}}
+{{sname}}
+{% for k in keys %}
+{{k}}
+{%endfor%}
+</body>
+</html>
