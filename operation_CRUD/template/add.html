@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Add new Student</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" name="Add">
+
+    <h1>Show Data</h1>
+    {% if stu %}
+    <h5>Table Data</h5>
+<table border="1px">
+    <tr>
+    <th>Id</th>&nbsp;
+    <th>Name</th>&nbsp;
+    <th>Email</th>&nbsp;
+    <th>Password</th>&nbsp;
+        <th>Action</th>&nbsp;
+    </tr>
+    {% for s in stu %}
+    <tr>
+        <td>{{s.id}}</td>
+        <td>{{s.name}}</td>
+        <td>{{s.email}}</td>
+        <td>{{s.password}}</td>
+        <td>
+           <a href="{% url 'update' s.id %}"> Edit
+            <form  action="{% url 'delete' s.id %}" method="post">
+                {% csrf_token %}
+                <input type="submit" value="Delete">
+            </form>
+    </tr>
+    {% endfor %}
+</table>
+    {% else %}
+    <h2>No Records Found</h2>
+    {% endif%}
+</form>
+{% endblock content %}

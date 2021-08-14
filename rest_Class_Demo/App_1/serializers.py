@@ -1,4 +1,3 @@
-
 from rest_framework import serializers
 from App_1.models import Players
 
